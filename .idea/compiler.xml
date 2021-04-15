@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ATT" />
+        <module name="MercedesBenz" />
+        <module name="Macys" />
+        <module name="BankOfAmerica" />
+        <module name="Generic" />
+        <module name="Airbnb" />
+        <module name="ESPN" />
+        <module name="BMW" />
+        <module name="Chase" />
+        <module name="Redfin" />
+        <module name="Ebay" />
+        <module name="Expedia" />
+        <module name="Trulia" />
+        <module name="CbsSports" />
+        <module name="Verizon" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
