@@ -17,22 +17,17 @@ import org.openqa.selenium.support.PageFactory;
 import java.io.IOException;
 
 public class HomePageStepDefinition  extends WebAPI {
-    static HomePage homePage;
+    public static HomePage homePage = new HomePage();
 
-    // Cucumber Hook
     @AfterStep
     public void tearDown(Scenario scenario) {
         if (scenario.isFailed()) {
-            // Take a screenshot
+
             final byte[] screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenShot, "image/png", "Ebay");  // embed it in the report
         }
     }
 
-    @BeforeStep
-    public static void getInit() {
-        homePage = PageFactory.initElements(driver, HomePage.class);
-    }
 
     @After
     public void closeBrowser() {
@@ -42,7 +37,7 @@ public class HomePageStepDefinition  extends WebAPI {
 
     @Given("I am on ebay homePage")
     public void iAmOnT_mobileHomePage() throws IOException {
-        // Call Action method
+
         openBrowser("https://www.ebay.com/");
 
     }
@@ -53,18 +48,50 @@ public class HomePageStepDefinition  extends WebAPI {
 
     }
 
-    @And("I enter Macbook into search field")
-    public void iEnterMacbookIntoSearchField() {
-        homePage.sendKeysToField();
+    @And("I enter {string} in search bar")
+    public void iEnterInSearchBar(String searchText) {
+        homePage.sendKeysToSearchBar(searchText);
     }
 
-    @And("I click on search button")
-    public void iClickOnSearchButton() {
-        homePage.selectSearchButton();
+    @And("I should see {string} values in search bar")
+    public void iShouldSeeValuesInSearchBar(String expectedValue) {
+        homePage.verifyExpectedResultText(expectedValue);
     }
 
-    @Then("I should see {string} as result header")
-    public void iShouldSeeAsResultHeader(String expectedText) {
-        homePage.verifyMacbookResultHeader(expectedText);
+    @When("I click Electronics")
+    public void iClickElectronics() {
+        homePage.clickElectronics();
     }
+
+    @Then("I should see {string} in Electronics page")
+    public void iShouldSeeInElectronicsPage(String expectedHeader) {
+        homePage.VerifyPageHeader(expectedHeader);
+    }
+
+    @When("I check on search bar")
+    public void iCheckOnSearchBar() {
+        homePage.clickSearchBar();
+    }
+
+    @And("I type to search")
+    public void iTypeToSearch() {
+        homePage.typeItemToSearch();
+    }
+
+    @And("I click search submit button")
+    public void iClickSearchSubmitButton() {
+        homePage.clickSearchButton();
+    }
+
+    @And("I click Samsung Galaxy")
+    public void iClickSamsungGalaxy() {
+        homePage.clickSamsungGalaxy();
+    }
+
+
+    @Then("I verify {string} in Tablets results")
+    public void iVerifyInTabletsResults(String expectedText) {
+        homePage.verifySamsungHeader(expectedText);
+    }
+
 }

@@ -6,41 +6,59 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static homepage.HomePageWebElement.*;
 
+
+
 public class HomePage extends WebAPI {
 
-// Action Method class
-
-    // Find By Annotation: First Approach
-
-    @FindBy(how = How.CSS, using = searchButtonLocator)
-    public WebElement searchButton;
-
-    public void verifyPageTitle(String expectedText) {
-        String actualText = driver.getTitle();
-        Assert.assertEquals("Page Title not match", expectedText, actualText);
+    public HomePage(){
+        PageFactory.initElements(driver, this);
     }
 
-    /**
-     * Send Keys
-     */
     public void selectSearchField(){
-        clickByXNCssUsingJavaScript(WEB_ELEMENT_FIELD_SEARCH);
-    }
-    public void sendKeysToField(){
-        typeOnElement(WEB_ELEMENT_FIELD_SEARCH,WEB_ELEMENT_INPUT_SEARCH);
-    }
-    public void selectSearchButton(){
-        clickByXNCssUsingJavaScript(WEB_ELEMENT_BUTTON_SEARCH);
-    }
-    public void verifyMacbookResultHeader(String expectedText){
-        assertEqualGetText(WEB_ELEMENT_HEADER_MACBOOK,expectedText);
-
+        clickByXNCssUsingJavaScript(WEB_ELEMENT_SEARCH_FIELD);
     }
 
+    public void sendKeysToSearchBar(String searchText){
+        typeOnElement(WEB_ELEMENT_SEARCH_FIELD,searchText);
+    }
 
+    public void verifyExpectedResultText(String expectedValue){
+        Assert.assertEquals(getAttributeFromElement(WEB_ELEMENT_SEARCH_FIELD, "value"),expectedValue);
+    }
+
+    public void clickElectronics(){
+        clickByXNCssUsingJavaScript(WEB_ELEMENT_ELECTRONICS);
+    }
+
+    public void VerifyPageHeader(String expectedHeader){
+        softAssert.assertEquals(expectedHeader, WEB_ELEMENT_ELECTRONICS_HEADER);
+    }
+
+    public void clickSearchBar(){
+        clickByXpath(WEB_ELEMENT_SEARCH_FIELD);
+    }
+
+    public void typeItemToSearch(){
+        WebElement item = driver.findElement(By.xpath(WEB_ELEMENT_SEARCH_FIELD));
+        item.sendKeys("Tablets");
+    }
+
+    public void clickSearchButton(){
+        clickByXpath(WEB_ELEMENT_SEARCH_BUTTON);
+    }
+
+    public void clickSamsungGalaxy(){
+        clickByXNCssUsingJavaScript(WEB_ELEMENT_SAMSUNG_GALAXY);
+    }
+
+    public void verifySamsungHeader(String expectedText){
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_SAMSUNG_GALAXY_HEADER);
+    }
 }
+

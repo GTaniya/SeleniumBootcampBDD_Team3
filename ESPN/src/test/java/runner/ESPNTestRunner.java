@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         // For single feature file
-        // features = {"src/test/java/features/HomePage.feature"}
+        // features = {"src/test/java/features/MLBPage.feature"}
         features = {"src/test/java/features"},
         // the path of the step definition files
         //  glue = "src/test/java/stepDefinitions",
