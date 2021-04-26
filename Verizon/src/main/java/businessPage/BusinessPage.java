@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 
 import static businessPage.BusinessPageLocators.*;
 
+
 public class BusinessPage extends WebAPI {
 
     public BusinessPage(){
@@ -34,7 +35,7 @@ public class BusinessPage extends WebAPI {
     }
 
     public void verifyPageHeader(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_FIVE_G_PAGE_HEADER, expectedText);
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_FIVE_G_PAGE_HEADER);
     }
 
     public void scrollDownToReadTheReportButton(){
@@ -50,7 +51,7 @@ public class BusinessPage extends WebAPI {
     }
 
     public void VerifyPageHeaderForeword(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_FOREWORD_HEADER, expectedText);
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_FOREWORD_HEADER);
     }
 
     public void scrollDownToSeeAllProducts(){
@@ -66,7 +67,8 @@ public class BusinessPage extends WebAPI {
     }
 
     public void verifyProductHeaderIphoneSE(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_IPHONE_SE_HEADER, expectedText);
+
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_IPHONE_SE_HEADER);
     }
 
     public void changeTheColorRed(){
@@ -79,7 +81,8 @@ public class BusinessPage extends WebAPI {
     }
 
     public void verifyProductHeaderSamsungGalaxy(String expectedResult){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_SAMSUNG_GALAXY_HEADER, expectedResult);
+
+        softAssert.assertEquals(expectedResult, WEB_ELEMENT_SAMSUNG_GALAXY_HEADER);
     }
 
     public void addToCartSamsungGalaxy(){
@@ -94,7 +97,9 @@ public class BusinessPage extends WebAPI {
     }
 
     public void verifyPopUpWindowHeader(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_SAMSUNG_GALAXY_ADD_POPUP_WINDOW_HEADER, expectedText);
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_SAMSUNG_GALAXY_ADD_POPUP_WINDOW_HEADER);
+
+
     }
 
     public void clickNetworkTab(){
@@ -106,7 +111,8 @@ public class BusinessPage extends WebAPI {
     }
 
     public void verifyPrivateIPHeader(String expectedHeader){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_NETWORK_PRIVATE_IP_HEADER, expectedHeader);
+        softAssert.assertEquals(expectedHeader, WEB_ELEMENT_NETWORK_PRIVATE_IP_HEADER);
+
     }
 
     @FindBy(xpath = WEB_ELEMENT_CONTACT_US )
@@ -127,7 +133,8 @@ public class BusinessPage extends WebAPI {
     }
 
     public void verifyTheStoreLocatorHeader(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_STORE_LOCATOR_HEADER, expectedText);
+        softAssert.assertEquals(expectedText,WEB_ELEMENT_STORE_LOCATOR_HEADER);
+
     }
 
     public void scrollDownToBusinessInternet() throws InterruptedException {
@@ -148,7 +155,8 @@ public class BusinessPage extends WebAPI {
     }
 
     public void verifyOfferAndDetails(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_FIOS_BUSINESS_OFFERS_AND_PRICING_HEADER, expectedText);
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_FIOS_BUSINESS_OFFERS_AND_PRICING_HEADER);
+
     }
 
     public void clickInternetAndTVLink(){

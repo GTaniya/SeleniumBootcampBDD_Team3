@@ -92,10 +92,10 @@ Feature: Redfin Home Page Functionalities check
 
       Examples:
         | searchText |expectedValue|notExpectedValue|     expectedUrl       |
-        |GermanTown  |GermanTown   |Bootcamp404     |https://www.redfin.com/|
-        |Fallschurch |Fallschurch  |Bootcamp404     |https://www.redfin.com/|
-        |Gaithersburg|Gaithersburg |Bootcamp404     |https://www.redfin.com/|
-        |Bethesda    |Bethesda     |Bootcamp404     |https://www.redfin.com/|
+        |GermanTown  |GermanTown   |Burger404       |https://www.redfin.com/|
+        |Fallschurch |Fallschurch  |Pizza404        |https://www.redfin.com/|
+        |Gaithersburg|Gaithersburg |Masks404        |https://www.redfin.com/|
+        |Bethesda    |Bethesda     |Fries404        |https://www.redfin.com/|
 
 
 

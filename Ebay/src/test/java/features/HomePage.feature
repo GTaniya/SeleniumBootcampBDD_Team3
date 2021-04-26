@@ -4,7 +4,7 @@ Feature: SearchBox Functionality check
     Given I am on ebay homePage
 
   @smokeTest
-  Scenario Outline: User able to Search In Redfin homepage search bar
+  Scenario Outline: User able to Search In Ebay homepage search bar
     When I click on search bar
     And I enter "<searchText>" in search bar
     Then I should see "<expectedValue>" values in search bar
@@ -32,7 +32,23 @@ Feature: SearchBox Functionality check
       Then I verify "Samsung Galaxy Tab A SM-T380 16GB, Wi-Fi, 8.0" in Tablets results
 
 
+  @smokeTest
+  Scenario Outline: User able to Search In ebay homepage search bar
+    When I click on search bar
+    And I put "<searchValues>" in search bar
+    Then I verify "<expectedValues>" in search bar
 
+    Examples:
+      |searchValues|expectedValues|
+      |TV          |TV            |
+      |Perfume     |Perfume       |
+
+    Scenario: User able to check Fashion Page
+      When I click Fashion Link
+      And I click Women clothing
+      And I click Jeans
+      And I click Rock Revival
+      Then I verify "Rock Revival Jeans for Women" in Jeans results
 
 
 

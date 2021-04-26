@@ -32,7 +32,8 @@ public class HomePage extends WebAPI {
     }
 
     public void verifyHeaderSell(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_SELL_PAGE_HEADER, expectedText );
+        softAssert.assertEquals(expectedText,WEB_ELEMENT_SELL_PAGE_HEADER);
+
     }
 
     public void scrollDownToBottomOfThePage(){
@@ -49,7 +50,8 @@ public class HomePage extends WebAPI {
     }
 
     public void verifyControllingAlertsPageHeader(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_HELP_CONTROLLING_ALERTS_HEADER, expectedText );
+        softAssert.assertEquals(expectedText,WEB_ELEMENT_HELP_CONTROLLING_ALERTS_HEADER);
+
     }
 
     public void clickHelpFacebookGoogleLogin(){
@@ -73,7 +75,8 @@ public class HomePage extends WebAPI {
     }
 
     public void verifyPasswordResetPageHeader(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_HELP_PASSWORD_RESET_HEADER, expectedText);
+        softAssert.assertEquals(expectedText,WEB_ELEMENT_HELP_PASSWORD_RESET_HEADER);
+
     }
 
     public void clickJobsLink(){
@@ -93,7 +96,7 @@ public class HomePage extends WebAPI {
     }
 
     public void verifyInternshipHeader(String expectedHeader){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_JOBS_SEE_ALL_DEPARTMENT_INTERNSHIPS_HEADER, expectedHeader);
+        softAssert.assertEquals(expectedHeader,WEB_ELEMENT_JOBS_SEE_ALL_DEPARTMENT_INTERNSHIPS_HEADER);
     }
 
     public void clickDataEngineerJob(){
@@ -101,7 +104,8 @@ public class HomePage extends WebAPI {
     }
 
     public void verifyDataEngineerHeader(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_JOBS_SEE_ALL_DEPARTMENT_INTERNSHIPS_DATA_ENGINEER_HEADER, expectedText);
+        softAssert.assertEquals(expectedText,WEB_ELEMENT_JOBS_SEE_ALL_DEPARTMENT_INTERNSHIPS_DATA_ENGINEER_HEADER);
+
     }
 
     public void ScrollDownRealState(){
@@ -117,7 +121,8 @@ public class HomePage extends WebAPI {
     }
 
     public void verifyRealStateAgentHeader(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_JOBS_REAL_STATE_AGENT_LEARN_MORE_HEADER, expectedText );
+        softAssert.assertEquals(expectedText,WEB_ELEMENT_JOBS_REAL_STATE_AGENT_LEARN_MORE_HEADER);
+
     }
 
     public void clickApplyNowButton(){
@@ -125,6 +130,7 @@ public class HomePage extends WebAPI {
     }
 
     public void verifyApplyNowHeader(String expectedText){
+
         softAssertAssertEqualsGetText(WEB_ELEMENT_JOBS_REAL_STATE_AGENT_APPLY_NOW_HEADER, expectedText);
     }
 
@@ -140,7 +146,8 @@ public class HomePage extends WebAPI {
     }
 
     public void verifySubmitRequestHeader(String expectedText){
-        softAssertAssertEqualsGetText(WEB_ELEMENT_CONTACT_US_MESSAGE_HEADER, expectedText);
+        softAssert.assertEquals(expectedText,WEB_ELEMENT_CONTACT_US_MESSAGE_HEADER);
+
     }
 
     public void clickDropDownMenu(){

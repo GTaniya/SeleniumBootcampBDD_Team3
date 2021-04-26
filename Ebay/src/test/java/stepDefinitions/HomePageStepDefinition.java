@@ -94,4 +94,38 @@ public class HomePageStepDefinition  extends WebAPI {
         homePage.verifySamsungHeader(expectedText);
     }
 
+    @And("I put {string} in search bar")
+    public void iPutInSearchBar(String searchValues) {
+        homePage.sendValues(searchValues);
+        }
+
+    @Then("I verify {string} in search bar")
+    public void iVerifyInSearchBar(String expectedValues) {
+        homePage.verifyExpectedValues(expectedValues);
+    }
+
+    @When("I click Fashion Link")
+    public void iClickFashionLink() {
+        homePage.clickOnFashionLink();
+    }
+
+    @And("I click Women clothing")
+    public void iClickWomenClothing() {
+        homePage.clickWomenClothing();
+    }
+
+    @And("I click Jeans")
+    public void iClickJeans() {
+        homePage.clickJeans();
+    }
+
+    @And("I click Rock Revival")
+    public void iClickRockRevival() {
+        homePage.clickRockRevival();
+    }
+
+    @Then("I verify {string} in Jeans results")
+    public void iVerifyInJeansResults(String expectedValue) {
+        homePage.VerifyJeansHeader(expectedValue);
+    }
 }

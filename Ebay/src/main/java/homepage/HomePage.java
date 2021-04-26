@@ -20,6 +20,9 @@ public class HomePage extends WebAPI {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy (xpath = WEB_ELEMENT_SEARCH_BUTTON)
+    public WebElement searchButton;
+
     public void selectSearchField(){
         clickByXNCssUsingJavaScript(WEB_ELEMENT_SEARCH_FIELD);
     }
@@ -59,6 +62,30 @@ public class HomePage extends WebAPI {
 
     public void verifySamsungHeader(String expectedText){
         softAssert.assertEquals(expectedText, WEB_ELEMENT_SAMSUNG_GALAXY_HEADER);
+    }
+    public void sendValues(String searchValue){
+        typeOnElement(WEB_ELEMENT_SEARCH_FIELD, searchValue);
+        //searchButton.click();
+        clickByXNCssUsingJavaScript(WEB_ELEMENT_SEARCH_BUTTON);
+
+    }
+
+    public void verifyExpectedValues(String expectedValues){
+        Assert.assertEquals(getAttributeFromElement(WEB_ELEMENT_SEARCH_FIELD, "value"),expectedValues);
+    }
+
+    public void clickOnFashionLink(){click(WEB_ELEMENT_FASHION);}
+
+    public void clickWomenClothing(){
+        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_FASHION_WOMEN_CLOTHING));
+    }
+
+    public void clickJeans(){clickByXNCssUsingJavaScript(WEB_ELEMENT_FASHION_WOMEN_CLOTHING_JEANS);}
+
+    public void clickRockRevival(){click(WEB_ELEMENT_FASHION_WOMEN_CLOTHING_JEANS_ROCK_REVIVAL);}
+
+    public void VerifyJeansHeader(String expectedValue){
+        softAssert.assertEquals(expectedValue, WEB_ELEMENT_FASHION_WOMEN_CLOTHING_JEANS_ROCK_REVIVAL_HEADER);
     }
 }
 
