@@ -153,7 +153,7 @@ public class WebAPI {
     public static String sauceLabs_accessKey = "";
 
     public static void openBrowser(String url) throws IOException {
-        setUp(false, "browserStack", "windows", "10", "chrome", "89", url);
+        setUp(false, "browserStack", "OS X", "Sierra", "chrome", "90", url);
     }
 
 
@@ -1427,6 +1427,30 @@ public class WebAPI {
     public void waitUntilTextIsLocated(String main, String text, long seconds){
         WebDriverWait wait = new WebDriverWait(driver,seconds);
         wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(main), text));
+    }
+
+    public String getAttributeFromElement(String element, String attribute) {
+        String elementText = "";
+
+        try {
+            elementText = driver.findElement(By.xpath(element)).getAttribute(attribute);
+            return elementText;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("UNABLE TO GET ATTRIBUTE FROM WEB ELEMENT");
+        }
+
+        return elementText;
+    }
+
+    public boolean isUrlTrue(String url){
+        boolean flag = false;
+
+        if(driver.getCurrentUrl().equals(url)){
+            flag = true;
+            return flag;
+        }
+        return flag;
     }
 }
 
