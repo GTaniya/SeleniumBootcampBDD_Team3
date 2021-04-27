@@ -2,9 +2,10 @@ package homepage;
 
 public class HomePageWebElement {
 
-    // WebElement class for Locators only and some other properties
-    public static final String searchBoxLocator="nav_search_input-desktop";
-    public static final String searchButtonLocator="[role='img']";
+    public static final String WEB_ELEMENT_CLICK_CREDIT_CARDS ="//a[@id='navCreditCards']/span[@class='title']";
+
+    public static final String WEB_ELEMENT_CLICK_CASH_REWARDS_CARD_BUTTON ="//a[@id='cashRewardsCards']";
+    public static final String WEB_ELEMENT_LINK_CASH_BACK_CREDIT_CARD_HEADER ="//h1[@class='heading title-heading']";
 
 
 

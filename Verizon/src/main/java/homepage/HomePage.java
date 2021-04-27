@@ -5,33 +5,27 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 import static homepage.HomePageWebElement.*;
 
 public class HomePage extends WebAPI {
 
-// Action Method class
+    public HomePage(){
+        PageFactory.initElements(driver,this);
+    }
+    public void clickShopMenu(){click(WEB_ELEMENT_CLICK_SHOP_LIST);}
 
-    // Find By Annotation: First Approach
+    public void clickAccessories(){click(WEB_ELEMENT_CLICK_ACCESSORIES);}
 
-    @FindBy(how = How.CSS, using = searchButtonLocator)
-    public WebElement searchButton;
-    @FindBy(how = How.ID, using = searchBoxLocator)
-    public WebElement searchBox;
+    public void clickCasesAndPROTECTION(){click(WEB_ELEMENT_CLICK_CASES_AND_PROTECTION);}
 
+    public void clickIphoneCases(){click(WEB_ELEMENT_CLICK_IPHONE_CASES);}
 
-    public void enterProductName(String productName) {
-        searchBox.sendKeys(productName);
+    public void verifyIphoneCases(String expectedText){
+        softAssert.assertEquals(WEB_ELEMENT_VERIFY_IPHONE_CASES,expectedText);
     }
 
-    public void clickOnSearchButton() {
-        searchButton.click();
-    }
-
-    public void verifyPageTitle(String expectedText) {
-        String actualText = driver.getTitle();
-        Assert.assertEquals("Page Title not match", expectedText, actualText);
-    }
 
 
 }

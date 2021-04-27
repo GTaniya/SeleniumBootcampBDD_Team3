@@ -46,6 +46,7 @@ public class WebAPI {
 
     //Robot available for all helper methods -> will not throw exceptions anymore
     public static Robot robot;
+    private static String sub;
 
     static {
         try {
@@ -1034,7 +1035,7 @@ public class WebAPI {
 
     }
 
-    public static void hoverOverDropdownNClickUsingXpath(String main, String sub) {
+    public static void hoverOverDropdownNClickUsingXpath(String main) {
         implicitWait(20);
         WebElement mainMenu = driver.findElement(By.xpath(main));
         Actions actions = new Actions(driver);
@@ -1427,6 +1428,28 @@ public class WebAPI {
     public void waitUntilTextIsLocated(String main, String text, long seconds){
         WebDriverWait wait = new WebDriverWait(driver,seconds);
         wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(main), text));
+    }
+    public String getAttributeFromElement(String element, String attribute) {
+        String elementText = "";
+
+        try {
+            elementText = driver.findElement(By.xpath(element)).getAttribute(attribute);
+            return elementText;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("UNABLE TO GET ATTRIBUTE FROM WEB ELEMENT");
+        }
+
+        return elementText;
+    }
+    public boolean isUrlTrue(String url){
+        boolean flag = false;
+
+        if(driver.getCurrentUrl().equals(url)){
+            flag = true;
+            return flag;
+        }
+        return flag;
     }
 }
 

@@ -10,22 +10,8 @@ import static homepage.HomePageWebElement.*;
 
 public class HomePage extends WebAPI {
 
-// Action Method class
-
-    // Find By Annotation: First Approach
-
-    @FindBy(how = How.CSS, using = searchButtonLocator)
-    public WebElement searchButton;
-
-
-    public void clickOnSearchButton1() {
-        clickByXNCssUsingJavaScript(searchButton1Locator);
-    }
-
-    public void verifyPageTitle(String expectedText) {
-        String actualText = driver.getTitle();
-        Assert.assertEquals("Page Title not match", expectedText, actualText);
-    }
+    public void clickOnTheSearchBar(){click(WEB_ELEMENT_CLICK_SEARCH_BAR);}
+    public void  searchLocation(){}
 
 
 }

@@ -2,34 +2,30 @@ package homepage;
 
 import common.WebAPI;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 
 import static homepage.HomePageWebElement.*;
 
 public class HomePage extends WebAPI {
 
-// Action Method class
+    public void clickHomeAndDevice(){click(WEB_ELEMENT_CLICK_HOME_AND_DEVICES);}
 
-    // Find By Annotation: First Approach
-    @FindBy(how = How.ID, using = searchBoxLocator)
-    public WebElement searchBox;
-    @FindBy(how = How.XPATH, using = searchButton1Locator)
-    public WebElement searchButton1;
+    public void scrollDownAndClickIphone12(){scrollToElementUsingJavaScript(WEB_ELEMENT_SCROLL_DOWN_AND_CLICK_IPHONE_12);}
 
+    public void clickIphoneTwelve(){click(WEB_ELEMENT_SCROLL_DOWN_AND_CLICK_IPHONE_12);}
 
+    public void verifyIphoneTwelveHeader(String expectedText){
+        softAssertAssertEqualsGetText(WEB_ELEMENT_HEADER_IPHONE_12,expectedText);
+    }
+    public void clickSearchBar(){click(WEB_ELEMENT_CLICK_ON_THE_SEARCH_BAR);}
 
-    public void enterProductName(String productName) {
-        searchBox.sendKeys(productName);
+    public void searchItemsInTheSearchBar(String searchText){
+        typeOnElement(WEB_ELEMENT_CLICK_ON_THE_SEARCH_BAR,searchText);
+    }
+    public void verifyExpectedValue(String expectedValue){
+        Assert.assertEquals(getAttributeFromElement(WEB_ELEMENT_CLICK_ON_THE_SEARCH_BAR,"value"),expectedValue);
     }
 
-    public void clickOnSearchButton1() { searchButton1.click();}
 
-    public void verifyPageTitle(String expectedText) {
-        String actualText = driver.getTitle();
-        Assert.assertEquals("Page Title not match", expectedText, actualText);
-    }
 
 
 }

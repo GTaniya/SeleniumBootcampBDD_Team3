@@ -1,15 +1,31 @@
 Feature: SearchBox Functionality check
 
-  @smokeTest
-  Scenario: TMobile searchBox functionality check with valid product
-    Given I am on t_mobile homePage
-    And I click on search Button1
-    And I type "my family where"
-    When I click on search Button
-    And I click on T-Mobile FamilyWhere app
-    Then I should see "T-Mobile FamilyWhere app" is properly appeared
-    But I should not see "laptop" is appeared
-    And I verify "T-Mobile FamilyWhere app | T-Mobile Support"  in product title
+  Background:
+    Given I am on the att home page
+
+    Scenario: buy iphone 12
+      When I click phone and devices
+      And  I scroll down and click iphone twelve
+      And  I click iphone twelve
+      Then I should see "iPhone 12" in iphone header
+
+
+      Scenario Outline: user can search phones in att page
+        When  I click search bar
+        And   I enter "<searchText>" in search bar
+        And   I verify "<expectedValue>" in search bar
+
+
+
+
+       Examples:
+        |searchText       |expectedValue    |
+        |iphone 11        |iphone 11        |
+        |iphone 12 pro max|iphone 12 pro max|
+        |iphone 7         |iphone 7         |
+        |iphone xs        |iphone xs        |
+        |iphone xr        | iphone xr       |
+
 
 
 

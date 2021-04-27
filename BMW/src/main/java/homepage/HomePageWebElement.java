@@ -1,14 +1,14 @@
 package homepage;
 
 public class HomePageWebElement {
-    // WebElement class for Locators only and some other properties
 
-    public static final String searchButton1Locator="//span[@class='d-inline show-on-sm-modal ng-star-inserted']";
-    public static final String searchBoxLocator="nav_search_input-desktop";
-    public static final String searchButtonLocator="[role='img']";
-    public static final String familyWhereLocator="//h3[.='T-Mobile FamilyWhere app']";
-    public static final String searchTextLocator="//h2[.='T-Mobile FamilyWhere app']";
+    public static final String WEB_ELEMENT_CLICK_MODELS_BUTTON ="//button[@name='Models Flyout']/span[@class='globalnav-primary__link-content headline-5--bold']";
 
+    public static final String WEB_ELEMENT_CLICK_BMW_SEVEN_SERIES ="//div[@class='globalnav-primary-vehicles__tab globalnav-primary-vehicles__tab--active']//img[@alt='7']";
+
+    public static final String WEB_ELEMENT_CLICK_GALLERY ="///a[contains(.,'Gallery')]";
+
+    public static final String WEB_ELEMENT_VERIFY_THE_SEVEN_SERIES_SEDAN_GALLERY ="iframe[src*='javascript:void(0)']";
 
 
 

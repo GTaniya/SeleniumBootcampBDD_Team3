@@ -21,34 +21,36 @@ public class HomePageStepDefinition  extends WebAPI {
 
     // Cucumber Hook
     @AfterStep
-    public void tearDown(Scenario scenario){
-        if (scenario.isFailed()){
+    public void tearDown(Scenario scenario) {
+        if (scenario.isFailed()) {
             // Take a screenshot
-            final byte[] screenShot= ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenShot,"image/png","TMobile");  // embed it in the report
+            final byte[] screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenShot, "image/png", "airbnb");  // embed it in the report
         }
     }
 
     @BeforeStep
-    public static void getInit(){
-        homePage= PageFactory.initElements(driver,HomePage.class);
+    public static void getInit() {
+        homePage = PageFactory.initElements(driver, HomePage.class);
     }
 
     @After
-    public void closeBrowser(){
+    public void closeBrowser() {
         cleanUp();
     }
 
 
-    @Given("I am on t_mobile homePage")
-    public void iAmOnT_mobileHomePage() throws IOException {
-        // Call Action method
-        openBrowser("https://www.t-mobile.com/");
-    }
-    @Given("I click on search Button1")
-    public void i_click_on_search_button1() {
-        homePage.clickOnSearchButton1();
+    @Given("I am on the Airbnb home page")
+    public void iAmOnTheAirbnbHomePage() throws IOException {
+
+        openBrowser("https://www.airbnb.com/");
     }
 
+    @When("I click on the search bar")
+    public void iClickOnTheSearchBar() {
+        homePage.clickOnTheSearchBar();
 
+    }
 }
+
+

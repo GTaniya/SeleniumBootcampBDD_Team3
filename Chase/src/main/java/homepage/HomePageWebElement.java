@@ -1,13 +1,17 @@
 package homepage;
 
 public class HomePageWebElement {
-    // WebElement class for Locators only and some other properties
 
-    public static final String searchButton1Locator="//span[@class='d-inline show-on-sm-modal ng-star-inserted']";
-    public static final String searchBoxLocator="nav_search_input-desktop";
-    public static final String searchButtonLocator="[role='img']";
-    public static final String familyWhereLocator="//h3[.='T-Mobile FamilyWhere app']";
-    public static final String searchTextLocator="//h2[.='T-Mobile FamilyWhere app']";
+    public static final String WEB_ELEMENT_CLICK_MENU_BAR ="//a[@id='skip-sidemenu']";
+
+    public static final String WEB_ELEMENT_CLICK_INVESTMENT_BUTTON ="//a[@href='https://www.chase.com/personal/investments']";
+
+    public static final String WEB_ELEMENT_CLICK_INVESTMENT_PLANNING="//nav[@id='SubHeaderOriginal']//li[@class='secondary-nav-subheader__nav--item ']/a[contains(.,'Investment Planning')]";
+
+    public static final String WEB_ELEMENT_CLICK_RETIREMENT_BUTTON ="//nav[@id='SubHeaderOriginal']//a[contains(.,'Retirement')]";
+
+    public static final String WEB_ELEMENT_RETIREMENT_HEADER ="//h2[contains(text(),'Planning for retirement on your terms')]";
+
 
 
 

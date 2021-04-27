@@ -25,7 +25,7 @@ public class HomePageStepDefinition  extends WebAPI {
         if (scenario.isFailed()){
             // Take a screenshot
             final byte[] screenShot= ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenShot,"image/png","TMobile");  // embed it in the report
+            scenario.attach(screenShot,"image/png","bank of america");  // embed it in the report
         }
     }
 
@@ -40,40 +40,27 @@ public class HomePageStepDefinition  extends WebAPI {
     }
 
 
-    @Given("I am on t_mobile homePage")
-    public void iAmOnT_mobileHomePage() throws IOException {
-        // Call Action method
-        openBrowser("https://www.t-mobile.com/");
-    }
-    @Given("I click on search Button1")
-    public void i_click_on_search_button1() {
-        homePage.clickOnSearchButton1();
-    }
-    @Given("I type {string}")
-    public void i_type(String productName) {
-        homePage.enterProductName(productName);
-    }
-    @When("I click on search Button")
-    public void i_click_on_search_button() {
-        homePage.clickOnSearchButton();
-    }
-    @And("I click on T-Mobile FamilyWhere app")
-    public void iClickOnTMobileFamilyWhereApp() {
-        homePage.clickOnTMobileFamilyWhere();
-    }
-    @Then("I should see {string} is properly appeared")
-    public void i_should_see_is_properly_appeared(String expectedText) {
-        homePage.verifySearchResult(expectedText);
-    }
-    @Then("I should not see {string} is appeared")
-    public void i_should_not_see_is_appeared(String expectedText) {
-        homePage.verifySearchResultNotMatch(expectedText);
-    }
-    @And("I verify {string}  in product title")
-    public void iVerifyInProductTitle(String expectedText) {
-        homePage.verifyPageTitle(expectedText);
+    @Given("I AM ON THE Bank OF America page")
+    public void iAMONTHEBankOFAmericaPage() throws IOException {
+        openBrowser("https://www.bankofamerica.com/");
     }
 
 
+    @When("I click credit cards button")
+    public void iClickCreditCardsButton() {
+        homePage.clickCreditCardsButton();
 
+    }
+
+    @And("I click cash reward card button")
+    public void iClickCashRewardCardButton() {
+        homePage.clickCashRewardCards();
+    }
+
+    @Then("I should see {string} in bank od America page")
+    public void iShouldSeeInBankOdAmericaPage(String expectedText) {
+        homePage.verifyExpectedText(expectedText);
+
+    }
 }
+

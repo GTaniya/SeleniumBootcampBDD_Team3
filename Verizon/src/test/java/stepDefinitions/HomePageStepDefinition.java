@@ -21,59 +21,54 @@ public class HomePageStepDefinition  extends WebAPI {
 
     // Cucumber Hook
     @AfterStep
-    public void tearDown(Scenario scenario){
-        if (scenario.isFailed()){
+    public void tearDown(Scenario scenario) {
+        if (scenario.isFailed()) {
             // Take a screenshot
-            final byte[] screenShot= ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenShot,"image/png","TMobile");  // embed it in the report
+            final byte[] screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenShot, "image/png", "verizon");  // embed it in the report
         }
     }
 
     @BeforeStep
-    public static void getInit(){
-        homePage= PageFactory.initElements(driver,HomePage.class);
+    public static void getInit() {
+        homePage = PageFactory.initElements(driver, HomePage.class);
     }
 
     @After
-    public void closeBrowser(){
+    public void closeBrowser() {
         cleanUp();
     }
-
-
-    @Given("I am on t_mobile homePage")
-    public void iAmOnT_mobileHomePage() throws IOException {
-        // Call Action method
-        openBrowser("https://www.t-mobile.com/");
-    }
-    @Given("I click on search Button1")
-    public void i_click_on_search_button1() {
-        homePage.clickOnSearchButton1();
-    }
-    @Given("I type {string}")
-    public void i_type(String productName) {
-        homePage.enterProductName(productName);
-    }
-    @When("I click on search Button")
-    public void i_click_on_search_button() {
-        homePage.clickOnSearchButton();
-    }
-    @And("I click on T-Mobile FamilyWhere app")
-    public void iClickOnTMobileFamilyWhereApp() {
-        homePage.clickOnTMobileFamilyWhere();
-    }
-    @Then("I should see {string} is properly appeared")
-    public void i_should_see_is_properly_appeared(String expectedText) {
-        homePage.verifySearchResult(expectedText);
-    }
-    @Then("I should not see {string} is appeared")
-    public void i_should_not_see_is_appeared(String expectedText) {
-        homePage.verifySearchResultNotMatch(expectedText);
-    }
-    @And("I verify {string}  in product title")
-    public void iVerifyInProductTitle(String expectedText) {
-        homePage.verifyPageTitle(expectedText);
+    @Given("I am on the verizon page")
+    public void iAmOnTheVerizonPage() throws IOException {
+        openBrowser("https://www.verizon.com/");
     }
 
+    @When("I click shop menu list")
+    public void iClickShopMenuList() {
+        homePage.clickShopMenu();
 
+    }
 
+    @And("I click accessories")
+    public void iClickAccessories() {
+        homePage.clickCasesAndPROTECTION();
+
+    }
+
+    @And("I click cases and protection")
+    public void iClickCasesAndProtection() {
+        homePage.clickCasesAndPROTECTION();
+
+    }
+
+    @And("I click Iphone cases button")
+    public void iClickIphoneCasesButton() {
+        homePage.clickIphoneCases();
+
+    }
+
+    @Then("I verify {string} in header")
+    public void iVerifyInHeader(String arg0) {
+
+    }
 }

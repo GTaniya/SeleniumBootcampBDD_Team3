@@ -25,7 +25,7 @@ public class HomePageStepDefinition  extends WebAPI {
         if (scenario.isFailed()){
             // Take a screenshot
             final byte[] screenShot= ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenShot,"image/png","TMobile");  // embed it in the report
+            scenario.attach(screenShot,"image/png","BMW");  // embed it in the report
         }
     }
 
@@ -39,41 +39,36 @@ public class HomePageStepDefinition  extends WebAPI {
         cleanUp();
     }
 
+    @Given("I am on the BMW home page")
+    public void iAmOnTheBMWHomePage() throws IOException {
+        openBrowser("https://www.bmwusa.com/");
 
-    @Given("I am on t_mobile homePage")
-    public void iAmOnT_mobileHomePage() throws IOException {
-        // Call Action method
-        openBrowser("https://www.t-mobile.com/");
-    }
-    @Given("I click on search Button1")
-    public void i_click_on_search_button1() {
-        homePage.clickOnSearchButton1();
-    }
-    @Given("I type {string}")
-    public void i_type(String productName) {
-        homePage.enterProductName(productName);
-    }
-    @When("I click on search Button")
-    public void i_click_on_search_button() {
-        homePage.clickOnSearchButton();
-    }
-    @And("I click on T-Mobile FamilyWhere app")
-    public void iClickOnTMobileFamilyWhereApp() {
-        homePage.clickOnTMobileFamilyWhere();
-    }
-    @Then("I should see {string} is properly appeared")
-    public void i_should_see_is_properly_appeared(String expectedText) {
-        homePage.verifySearchResult(expectedText);
-    }
-    @Then("I should not see {string} is appeared")
-    public void i_should_not_see_is_appeared(String expectedText) {
-        homePage.verifySearchResultNotMatch(expectedText);
-    }
-    @And("I verify {string}  in product title")
-    public void iVerifyInProductTitle(String expectedText) {
-        homePage.verifyPageTitle(expectedText);
     }
 
+    @When("I click model button")
+    public void iClickModelButton() {
+        homePage.clickModelsButton();
 
+    }
 
+    @And("I click BMW SEVEN series")
+    public void iClickBMWSEVENSeries() {
+        homePage.clickBMWSevenSeries();
+
+    }
+
+    @And("I click Gallery")
+    public void iClickGallery() {
+        homePage.clickGallery();
+
+    }
+
+    @Then("I verify {string} in the Gallery page")
+    public void iVerifyInTheGalleryPage(String expectedText) {
+        homePage.verifyBmwSevenSeries(expectedText);
+
+    }
 }
+
+
+
