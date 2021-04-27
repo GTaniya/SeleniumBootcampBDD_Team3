@@ -87,5 +87,17 @@ public class HomePage extends WebAPI {
     public void VerifyJeansHeader(String expectedValue){
         softAssert.assertEquals(expectedValue, WEB_ELEMENT_FASHION_WOMEN_CLOTHING_JEANS_ROCK_REVIVAL_HEADER);
     }
-}
+
+    public void selectFashionCategories(String fashionCategories){
+            clickElement(driver.findElement(By.xpath(getFashionCategoriesLocators(fashionCategories))));
+            implicitWait(20);
+        }
+
+    public void selectHeaders(String expectedHeader){
+        softAssert.assertEquals(expectedHeader, getHeaderLocators(expectedHeader));
+    }
+
+    public void verifyUrl(String expectedUrl){Assert.assertTrue(isUrlTrue(expectedUrl));}
+    }
+
 

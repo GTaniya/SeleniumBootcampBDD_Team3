@@ -51,6 +51,21 @@ Feature: SearchBox Functionality check
       Then I verify "Rock Revival Jeans for Women" in Jeans results
 
 
+      Scenario Outline: User able to click Categories in Fashion page
+        When I click Fashion Link
+        And I select "<fashionCategories>" in fashion page
+        And I should see "<expectedHeader>" in each page
+        Then I verify "<expectedUrl>" in each page
+
+        Examples:
+          | fashionCategories |expectedHeader    |                      expectedUrl                                 |
+          |Women's Clothing   |b-pageheader__text|https://www.ebay.com/b/Womens-Clothing/15724/bn_661783            |
+          |Men's Clothing     |b-pageheader__text|https://www.ebay.com/b/Mens-Clothing/1059/bn_696958               |
+          |Jewelry            |b-pageheader__text|https://www.ebay.com/b/Jewelry/bn_7000259126                      |
+          |Watches            |b-pageheader__text|https://www.ebay.com/b/Watches-Parts-Accessories/260324/bn_2408535|
+
+
+
 
 
 

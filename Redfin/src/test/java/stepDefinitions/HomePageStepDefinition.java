@@ -231,4 +231,21 @@ public class HomePageStepDefinition  extends WebAPI {
     public void iVerifyAsPageUrl(String expectedUrl) {
         homePage.verifyExpectedUrl(expectedUrl);
     }
+
+    @When("I click California Home for sale link")
+    public void iClickCaliforniaHomeForSaleLink() {
+        homePage.clickCaliforniaHomeForSale();
+    }
+
+    @Then("I click {string} in California home for Sale page")
+    public void iClickInCaliforniaHomeForSalePage(String expectedCities) {
+        homePage.clickCitesLink(expectedCities);
+
+    }
+
+
+    @And("I should see {string} in each page")
+    public void iShouldSeeInEachPage(String expectedTitle) {
+        homePage.verifyExpectedTitles(expectedTitle);
+    }
 }

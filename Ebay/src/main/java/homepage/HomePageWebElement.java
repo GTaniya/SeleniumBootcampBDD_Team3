@@ -19,6 +19,13 @@ public class HomePageWebElement {
     public static final String WEB_ELEMENT_FASHION_WOMEN_CLOTHING_JEANS_ROCK_REVIVAL ="//p[.='Rock Revival']";
     public static final String WEB_ELEMENT_FASHION_WOMEN_CLOTHING_JEANS_ROCK_REVIVAL_HEADER ="//span[@class='b-pageheader__text']";
 
+    public static String getFashionCategoriesLocators(String fashionCategories){
+        return "//div[.=\""+fashionCategories+"\"]";
+    }
+    public static String getHeaderLocators(String header){
+        return "//span[@class='"+header+"']";
+    }
+
 
 
 

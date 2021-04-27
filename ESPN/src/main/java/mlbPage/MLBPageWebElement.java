@@ -20,4 +20,14 @@ public class MLBPageWebElement {
     public static final String WEB_ELEMENT_EMAIL_FIELD = "//input[@class='ng-pristine ng-invalid ng-invalid-required ng-valid-pattern ng-touched']";
     public static final String WEB_ELEMENT_SIGN_UP_BUTTON = "//a[.='Sign Up']";
     public static final String WEB_ELEMENT_SIGN_UP_HEADER = "//h2[@class='title title-primary ng-isolate-scope']";
+
+    public static String getTeamsLocators(String teams){
+        return "//h2[.='"+teams+"']";
+    }
+
+    public static final String WEB_ELEMENT_STANDINGS = "//a[@name='&lpos=sitenavdefault+mlb_mlbstandings']//span[@class='link-text']";
+
+    public static String getStandingsLocators(String standings){
+        return "//img[@title='"+standings+"']";
+    }
 }

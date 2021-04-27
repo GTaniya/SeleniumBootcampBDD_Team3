@@ -178,4 +178,17 @@ public class HomePage extends WebAPI {
     public void verifyExpectedUrl(String expectedUrl){
         Assert.assertTrue(isUrlTrue(expectedUrl));
     }
+
+    public void clickCaliforniaHomeForSale(){
+        clickByXpath(WEB_ELEMENT_CALIFORNIA_HOME_F0R_SALE);
+    }
+
+    public void clickCitesLink(String cities){
+        clickElement(driver.findElement(By.xpath(getCityLinkLocators(cities))));
+        implicitWait(20);
+    }
+    public void verifyExpectedTitles(String expectedTitle){
+        Assert.assertTrue(isUrlTrue(expectedTitle));
+    }
+
 }

@@ -1,6 +1,7 @@
 package mlbPage;
 
 import common.WebAPI;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,7 +23,13 @@ public class MLBPage extends WebAPI {
     }
 
     public void clickPlayersImage(String players){
-        clickElement(driver.findElement(By.xpath(getPlayersLocators(players))));
+        //clickElement(driver.findElement(By.xpath(getPlayersLocators(players))));
+        driver.findElement(By.xpath(getPlayersLocators(players))).click();
+        implicitWait(20);
+    }
+
+    public void verifyExpectedPlayerUrl(String expectedUrl) {
+        Assert.assertTrue(isUrlTrue(expectedUrl));
     }
 
     public void clickTeams(){click(WEB_ELEMENT_TEAMS);}
@@ -59,4 +66,26 @@ public class MLBPage extends WebAPI {
     public void verifySignInWindow(String expectedText){
         softAssert.assertEquals(expectedText, WEB_ELEMENT_SIGN_UP_HEADER);
     }
+
+    public void clickTeamsHeader(String teams){
+        //clickElement(driver.findElement(By.xpath(getTeamsLocators(teams))));
+        clickByXpath(getTeamsLocators(teams));
+        implicitWait(20);
+    }
+
+    public void verifyTheNames(String expectedText){
+        Assert.assertTrue(isUrlTrue(expectedText));
+    }
+
+    public void clickStandingsLink(){click(WEB_ELEMENT_STANDINGS);}
+
+    public void clickStandingsHeader(String standings){
+        clickByXpath(getStandingsLocators(standings));
+        implicitWait(20);
+    }
+
+    public void verifyExpectedUrl(String expectedUrl){
+        Assert.assertTrue(isUrlTrue(expectedUrl));
+    }
+
 }

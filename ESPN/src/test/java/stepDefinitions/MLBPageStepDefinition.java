@@ -95,4 +95,31 @@ public class MLBPageStepDefinition extends WebAPI {
     public void iVerifyHeaderInSignupWindow(String expectedText) {
         mlbPage.verifySignInWindow(expectedText);
     }
+
+    @Then("I select {string} in the team page")
+    public void iSelectInTheTeamPage(String teams) {
+        mlbPage.clickTeamsHeader(teams);
+    }
+
+    @And("I click Standings")
+    public void iClickStandings() {
+        mlbPage.clickStandingsLink();
+    }
+
+    @And("I select {string} in standing page")
+    public void iSelectInStandingPage(String standings) {
+        mlbPage.clickStandingsHeader(standings);
+    }
+
+    @Then("I should see {string} in the each page")
+    public void iShouldSeeInTheEachPage(String expectedUrl) {
+        mlbPage.verifyExpectedUrl(expectedUrl);
+    }
+
+    @And("I should see {string} in teams page")
+    public void iShouldSeeInTeamsPage(String expectedUrl) {
+        mlbPage.verifyExpectedPlayerUrl(expectedUrl);
+    }
+
+
 }

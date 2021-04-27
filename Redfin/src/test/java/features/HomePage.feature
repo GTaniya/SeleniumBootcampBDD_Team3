@@ -98,7 +98,17 @@ Feature: Redfin Home Page Functionalities check
         |Bethesda    |Bethesda     |Fries404        |https://www.redfin.com/|
 
 
+    Scenario Outline: User able to click on Cites in California Home for sale
+      When I click California Home for sale link
+      And I click "<searchCities>" in California home for Sale page
 
+
+      Examples:
+        | searchCities    |
+        |Los Angeles, CA  |
+        |San Diego, CA    |
+        |San Francisco, CA|
+        |San Jose, CA     |
 
 
 

@@ -169,4 +169,13 @@ public class BusinessPage extends WebAPI {
     public void verifyTVHeader(String expectedText){
         softAssertAssertEqualsGetText(WEB_ELEMENT_INTERNET_AND_TV_HEADER, expectedText);
     }
+
+    public void clickSearchButton(){
+        click(WEB_ELEMENT_SEARCH_BUTTON);
+    }
+    public void clickSearchField(){clickByXpath(WEB_ELEMENT_SEARCH_BAR);}
+
+    public void enterValuesInSearchBar(String searchValues){
+        typeOnElement(WEB_ELEMENT_SEARCH_BAR, searchValues );
+    }
 }

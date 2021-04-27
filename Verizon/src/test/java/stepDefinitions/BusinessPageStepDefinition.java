@@ -226,6 +226,23 @@ public class BusinessPageStepDefinition extends WebAPI {
     public void verifyThePageHeaderInFIOSTVPage(String expectedText) {
         businessPage.verifyTVHeader(expectedText);
     }
+
+    @When("I click search Button")
+    public void iClickSearchButton() {
+        businessPage.clickSearchButton();
+
+    }
+
+    @And("I click on search bar")
+    public void iClickOnSearchBar() {
+        businessPage.clickSearchField();
+    }
+
+    @And("I enter {string} in search field")
+    public void iEnterInSearchField(String searchValues) {
+        businessPage.enterValuesInSearchBar(searchValues);
+
+    }
 }
 
 

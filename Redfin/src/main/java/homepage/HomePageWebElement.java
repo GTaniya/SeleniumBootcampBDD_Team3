@@ -46,4 +46,11 @@ public class HomePageWebElement {
     public static final String WEB_ELEMENT_SEARCH_BAR ="//div[@class='searchInputNode']//input[@id='search-box-input']";
     public static final String WEB_ELEMENT_SEARCH_SUBMIT_BUTTON ="//div[@class='SearchBox showResults']//button[@class='inline-block SearchButton clickable float-right']";
 
+    //Click Links Using Table
+    public static final String WEB_ELEMENT_CALIFORNIA_HOME_F0R_SALE ="//a[@href='/state/California']";
+
+    public static String getCityLinkLocators(String cities){
+        return "//a[.='"+cities+"']";
+    }
+
 }

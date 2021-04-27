@@ -49,4 +49,9 @@ public class BusinessPageLocators {
     public static final String WEB_ELEMENT_INTERNET_AND_TV_LEARN_MORE = "//a[@href='/business/products/internet-tv-services/business-tv/']";
     public static final String WEB_ELEMENT_INTERNET_AND_TV_HEADER = "//div[@class='clapdynamic dynDone']/div[1]//h1[@class='title short']";
 
+    //Table Data
+    public static final String WEB_ELEMENT_SEARCH_BUTTON = "//div[@class='gnav20-row-two']/div[@class='gnav20-search-utility']";
+    public static final String WEB_ELEMENT_SEARCH_BAR= "//div[@class='gnav20-search-container']//input[@name='q']";
+    //public static final String WEB_ELEMENT_SEARCH_BAR= "//form[@id='gnav20-search-form']//input[@placeholder='Search']";
+
 }

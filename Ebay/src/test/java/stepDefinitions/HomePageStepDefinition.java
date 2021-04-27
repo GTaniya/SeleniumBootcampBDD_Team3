@@ -128,4 +128,21 @@ public class HomePageStepDefinition  extends WebAPI {
     public void iVerifyInJeansResults(String expectedValue) {
         homePage.VerifyJeansHeader(expectedValue);
     }
+
+
+    @And("I select {string} in fashion page")
+    public void iSelectInFashionPage(String fashionCategories) {
+        homePage.selectFashionCategories(fashionCategories);
+    }
+
+    @And("I should see {string} in each page")
+    public void iShouldSeeInEachPage(String expectedHeader) {
+        homePage.selectHeaders(expectedHeader);
+
+    }
+
+    @Then("I verify {string} in each page")
+    public void iVerifyInEachPage(String expectedUrl) {
+        homePage.verifyUrl(expectedUrl);
+    }
 }
