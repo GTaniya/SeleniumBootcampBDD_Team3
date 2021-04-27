@@ -7,9 +7,7 @@ import org.testng.Assert;
 import static internetpage.InternetWebElement.*;
 
 public class InternetPage extends WebAPI {
-    public InternetPage(){
-        PageFactory.initElements(driver,this);
-    }
+    public InternetPage(){ PageFactory.initElements(driver,this); }
 
     public void clickInternetPage(){
         clickByXNCssUsingJavaScript(WEB_ELEMENT_INTERNET_PAGE);
