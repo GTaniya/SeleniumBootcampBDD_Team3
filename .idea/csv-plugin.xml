@@ -31,6 +31,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/BMW/src/main/java/buildYourOwn/BuildYourOwnPage.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/BMW/src/main/java/buildYourOwn/BuildYourOwnWebElement.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/BMW/src/test/java/features/BuildYourOwnPage.feature">
+          <value>
+            <Attribute>
+              <option name="separator" value="|" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/Ebay/src/test/java/features/VideogamesConsoles.feature">
           <value>
             <Attribute>
