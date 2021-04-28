@@ -29,10 +29,15 @@ public class HomePage extends WebAPI {
 
     public void sendKeysToSearchBar(String searchText){
         typeOnElement(WEB_ELEMENT_SEARCH_FIELD,searchText);
+
     }
 
     public void verifyExpectedResultText(String expectedValue){
         Assert.assertEquals(getAttributeFromElement(WEB_ELEMENT_SEARCH_FIELD, "value"),expectedValue);
+    }
+
+    public void verifyExpectedUrl(String expectedUrl){
+        Assert.assertTrue(isUrlTrue(expectedUrl));
     }
 
     public void clickElectronics(){

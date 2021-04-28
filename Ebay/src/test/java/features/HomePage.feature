@@ -7,17 +7,18 @@ Feature: SearchBox Functionality check
   Scenario Outline: User able to Search In Ebay homepage search bar
     When I click on search bar
     And I enter "<searchText>" in search bar
-    Then I should see "<expectedValue>" values in search bar
+    And I should see "<expectedValue>" values in search bar
+    Then I verify "<expectedUrl>" values in search bar
 
 
     Examples:
-      | searchText |expectedValue|
-      |Shoes       |Shoes        |
-      |Masks       |Masks        |
-      |Watches     |Watches      |
-      |Jewelry     |Jewelry      |
-      |Tablet      |Tablet       |
-      |Headphones  |Headphones   |
+      | searchText |expectedValue|expectedUrl          |
+      |Shoes       |Shoes        |https://www.ebay.com/|
+      |Masks       |Masks        |https://www.ebay.com/|
+      |Watches     |Watches      |https://www.ebay.com/|
+      |Jewelry     |Jewelry      |https://www.ebay.com/|
+      |Tablet      |Tablet       |https://www.ebay.com/|
+      |Headphones  |Headphones   |https://www.ebay.com/|
 
 
     Scenario: Check Fashion Page

@@ -145,4 +145,9 @@ public class HomePageStepDefinition  extends WebAPI {
     public void iVerifyInEachPage(String expectedUrl) {
         homePage.verifyUrl(expectedUrl);
     }
+
+    @Then("I verify {string} values in search bar")
+    public void iVerifyValuesInSearchBar(String expectedUrl) {
+        homePage.verifyUrl(expectedUrl);
+    }
 }
